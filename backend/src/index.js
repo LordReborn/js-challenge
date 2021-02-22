@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const x = express();
-const app = require("./app");
+const morgan = require('morgan');
+const app = express();
 
 const start = async () => {
 try {
@@ -17,12 +17,22 @@ try {
 }
 
 // settings
-x.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 4000);
 
 // starting the server
-x.listen(x.get('port'), () => {
-    console.log(`Server on port ${x.get('port')}`);
+app.listen(app.get('port'), () => {
+    console.log(`Server on port ${app.get('port')}`);
 });
+
+// middlewares
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+// routes
+app.use(require('./routes'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/registry', require('./routes/registry'));
 
 }
 
