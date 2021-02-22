@@ -12,4 +12,4 @@ app.use(require('./routes'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/registry', require('./routes/registry'));
 
-module.export=app;
+module.export = app;
