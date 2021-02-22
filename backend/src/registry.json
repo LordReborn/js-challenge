@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "user":"Jonas",
+        "concept": "Ingreso",
+        "mont": "3000",
+        "date": "21/2/2021",
+        "category": "Trabajo"
+    },
+    {
+        "id": 2,
+        "user":"Jonas",
+        "concept": "Egreso",
+        "mont": "-40",
+        "date": "21/2/2021",
+        "category": "Comida"
+    }
+]

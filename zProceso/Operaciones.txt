@@ -1,0 +1,30 @@
+Datos Db:
+- Saldo actual
+- Concepto
+- Monto
+- Fecha
+- Tipo (Diferenciar en servidor con signo positivo o negativo para ahorrar datos)
+
+URL Db: /api/registry/id
+		/api/users
+
+En la lista borrar por ID
+
+(Tipo: diferenciar con js si tiene signo negativo en css colorear si es positivo o negativo)
+
+POST Ingreso => {
+	Saldo = Saldo + Ingreso;
+	Guardar_datos(PUT datos);
+}
+
+POST Egreso => {
+	Saldo = Saldo - Ingreso;
+	Guardar_datos(PUT datos);
+}
+
+
+Formato fecha dd/mm/yyyy:
+let fecha = new Date();
+let date = fecha.toLocaleDateString();
+date:
+"21/02/2021"
